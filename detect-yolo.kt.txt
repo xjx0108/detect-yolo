@@ -215,9 +215,7 @@ def run(weights=ROOT / 'yolov5l.pt',  # model.pt path(s)
                 for c in det[:, -1].unique():
                     n = (det[:, -1] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
-                    Results += '\n' + f"{n} {names[int(c)]}"  # TODO 加了一个变量Results
-
-                 # Write results+计数
+                    Results += '\n' + f"{n} {names[int(c)]}"
                 #
                 # output00_count = 1
                 # output01_count = 1
@@ -232,13 +230,12 @@ def run(weights=ROOT / 'yolov5l.pt',  # model.pt path(s)
                 #             f.write(('%g ' * len(line)).rstrip() % line + '\n')
                 #
                 #     if save_img or save_crop or view_img:
-                        # c = int(cls)  # 分类数
+                        # c = int(cls) 
                         # label = None if hide_labels else (
-                        #     names[c] if hide_conf else f'{names[c]} {conf:.2f} {output00_count}')  # TODO 标签展示这里加了末尾的{count}
+                        #     names[c] if hide_conf else f'{names[c]} {conf:.2f} {output00_count}')
                         # label = f'{names[int(cls)]} {conf:.2f}'
                         # annotator.box_label(xyxy, label, color=colors(c, True))
 
-                    ##########################分类计数##########################
                         #
                         # if int(cls) == 0:
                         #     output00_count += 1
@@ -249,10 +246,6 @@ def run(weights=ROOT / 'yolov5l.pt',  # model.pt path(s)
                         #         if int(cls) == 3:
                         #             output11_count += 1
                         # count = count+1
-                        #############################视频识别显示计数内容####################################
-
-
-                        ###################################################################################
 
 
 
